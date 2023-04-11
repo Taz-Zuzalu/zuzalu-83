@@ -273,26 +273,46 @@ const MyProfilePage = ({ events, sessions }: Props) => {
                                                 />
                                             </button>
                                         </div>
-                                        <div className="flex flex-row items-center gap-[8px] w-full">
-                                            <div className="flex flex-row items-start py-[8px] px-[4px] gap-[8px]">
-                                                <NextImage src={"/pin-map.svg"} alt="mappin" width={16} height={16} />
+                                        {profile.location && (
+                                            <div className="flex flex-row items-center gap-[8px] w-full">
+                                                <div className="flex flex-row items-start py-[8px] px-[4px] gap-[8px]">
+                                                    <NextImage
+                                                        src={"/pin-map.svg"}
+                                                        alt="mappin"
+                                                        width={16}
+                                                        height={16}
+                                                    />
+                                                </div>
+                                                <p className="font-[600] text-[16px] text-[#1C2928]">
+                                                    {profile?.location}
+                                                </p>
                                             </div>
-                                            <p className="font-[600] text-[16px] text-[#1C2928]">{profile?.location}</p>
-                                        </div>
-                                        <div className="flex flex-row items-center gap-[8px]">
-                                            <div className="flex flex-row items-start py-[8px] px-[4px] gap-[8px]">
-                                                <NextImage src={"/briefcase.svg"} alt="mappin" width={16} height={16} />
+                                        )}
+                                        {profile.company && (
+                                            <div className="flex flex-row items-center gap-[8px]">
+                                                <div className="flex flex-row items-start py-[8px] px-[4px] gap-[8px]">
+                                                    <NextImage
+                                                        src={"/briefcase.svg"}
+                                                        alt="mappin"
+                                                        width={16}
+                                                        height={16}
+                                                    />
+                                                </div>
+                                                <p className="font-[600] text-[16px] text-[#1C2928]">
+                                                    {profile?.company}
+                                                </p>
                                             </div>
-                                            <p className="font-[600] text-[16px] text-[#1C2928]">{profile?.company}</p>
-                                        </div>
-                                        <div className="flex flex-row items-start gap-[8px]">
-                                            <div className="flex flex-row items-start py-[8px] px-[4px] gap-[8px] w-[24px] h-[24px]">
-                                                <NextImage src={"/info.svg"} alt="info" width={16} height={16} />
+                                        )}
+                                        {profile.website && (
+                                            <div className="flex flex-row items-start gap-[8px]">
+                                                <div className="flex flex-row items-start py-[8px] px-[4px] gap-[8px] w-[24px] h-[24px]">
+                                                    <NextImage src={"/info.svg"} alt="info" width={16} height={16} />
+                                                </div>
+                                                <p className="font-[400] text-[16px] text-[#1C2928] w-[310px]">
+                                                    {profile?.bio}
+                                                </p>
                                             </div>
-                                            <p className="font-[400] text-[16px] text-[#1C2928] w-[310px]">
-                                                {profile?.bio}
-                                            </p>
-                                        </div>
+                                        )}
                                     </div>
                                 </div>
                             </div>
